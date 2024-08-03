@@ -52,7 +52,10 @@ jobs:
 
       - name: Build production 🚧
         run: pnpm run build
-
+        
+      - name: List all file
+        run: du -hc . | sort -h
+      
       - name: Deploy 📡
         uses: peaceiris/actions-gh-pages@v3
         with:
