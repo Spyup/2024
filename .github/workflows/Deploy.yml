@@ -53,9 +53,12 @@ jobs:
       - name: Build production 🚧
         run: pnpm run build
         
-      - name: List all file
+      - name: List public file
         run: du -hc ./public | sort -h
-    
+
+      - name: List dist file
+        run: du -hc ./dist | sort -h
+  
       - name: Deploy 📡
         uses: peaceiris/actions-gh-pages@v3
         with:
