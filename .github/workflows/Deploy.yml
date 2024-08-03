@@ -26,7 +26,7 @@ jobs:
         uses: easimon/maximize-build-space@master
         with:
           root-reserve-mb: 512
-          swap-size-mb: 1024
+          swap-size-mb: 0
           
       - name: Checkout 🛎
         uses: actions/checkout@master
@@ -65,12 +65,6 @@ jobs:
 
       - name: get all size
         run: du -shc ./
-        
-      - name: get system tmp size
-        run: sudo du -shc /tmp 2> /dev/null
-
-      - name: get system all size
-        run: sudo du -shc / 2> /dev/null
         
       - name: Deploy 📡
         uses: peaceiris/actions-gh-pages@v3
