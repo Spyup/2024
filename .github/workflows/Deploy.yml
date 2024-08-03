@@ -56,7 +56,13 @@ jobs:
 
       - name: List dist file
         run: du -hc ./dist | sort -h
-  
+
+      - name: get all size
+        run: du -shc ./
+        
+      - name: get system size
+        run: du -shc /
+        
       - name: Deploy 📡
         uses: peaceiris/actions-gh-pages@v3
         with:
